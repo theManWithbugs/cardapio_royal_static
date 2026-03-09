@@ -1,0 +1,57 @@
+.trash_can_btn {
+  position: relative;
+  width: 167px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cc0000;
+  background-color: #e50000;
+  overflow: hidden;
+}
+
+.trash_can_btn, .trash_can_btn__icon, .trash_can_btn__text {
+  transition: all 0.3s;
+}
+
+.trash_can_btn .trash_can_btn__text {
+  transform: translateX(35px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.trash_can_btn .trash_can_btn__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #cc0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trash_can_btn .svg {
+  width: 20px;
+}
+
+.trash_can_btn:hover {
+  background: #cc0000;
+}
+
+.trash_can_btn:hover .trash_can_btn__text {
+  color: transparent;
+}
+
+.trash_can_btn:hover .trash_can_btn__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.trash_can_btn:active .trash_can_btn__icon {
+  background-color: #b20000;
+}
+
+.trash_can_btn:active {
+  border: 1px solid #b20000;
+}

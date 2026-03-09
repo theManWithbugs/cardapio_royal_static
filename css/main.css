@@ -1,0 +1,709 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap');
+
+/* ══════════════════════════════════════
+   VARIÁVEIS
+══════════════════════════════════════ */
+:root {
+  --gold:        #C9A84C;
+  --gold-light:  #E8C96A;
+  --gold-dark:   #9A7B30;
+  --black:       #1A1A1A;
+  --dark:        #222222;
+  --dark-card:   #2E2E2E;
+  --dark-btn:    #383838;
+  --white:       #F5F0E8;
+  --muted:       #AAA;
+  --green:       #14a73e;
+  --red:         #C0392B;
+  --radius:      14px;
+  --shadow:      0 6px 24px rgba(0,0,0,0.45);
+}
+
+/* ══════════════════════════════════════
+   RESET / BASE
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--white);
+  background-color: var(--black);
+  background-image: radial-gradient(
+    ellipse 100% 50% at 50% 0%,
+    rgba(201,168,76,.10) 0%,
+    transparent 65%
+  );
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════
+   CONTAINER
+══════════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ══════════════════════════════════════
+   HEADER
+══════════════════════════════════════ */
+header {
+  background: linear-gradient(160deg, #252525 0%, #2e2500 55%, #252525 100%);
+  border-bottom: 1px solid rgba(201,168,76,.35);
+  box-shadow: 0 4px 28px rgba(0,0,0,.5);
+  padding: 1.8rem 1rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 60px,
+    rgba(201,168,76,.04) 60px,
+    rgba(201,168,76,.04) 61px
+  );
+  pointer-events: none;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 5.5vw, 3rem);
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-shadow: 0 0 32px rgba(201,168,76,.4);
+  line-height: 1.2;
+}
+
+header p.lead {
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: .78rem;
+  color: rgba(245,240,232,.5);
+  margin-top: .45rem;
+}
+
+header img { flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   SECTION LABEL
+══════════════════════════════════════ */
+.section-label {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 900;
+  color: var(--gold);
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 22px rgba(201,168,76,.3);
+}
+
+/* ══════════════════════════════════════
+   CARRINHO
+══════════════════════════════════════ */
+#div_carrinho {
+  background: linear-gradient(145deg, #303030, #262626);
+  border: 1px solid rgba(201,168,76,.3) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+  padding: 1.2rem !important;
+  min-height: 110px;
+}
+
+#div_carrinho h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: .75rem;
+  font-size: 1.05rem;
+}
+
+#div_carrinho p {
+  font-size: .92rem;
+  color: rgba(245,240,232,.78);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 8px 0;
+  margin: 0;
+  word-break: break-word;
+}
+#div_carrinho p:last-child  { border-bottom: none; }
+#div_carrinho p.fst-italic  { color: var(--muted); }
+#div_carrinho strong        { font-size: 1.05rem; color: var(--gold-light); }
+
+/* ══════════════════════════════════════
+   BOTÃO ENVIAR PEDIDO
+══════════════════════════════════════ */
+.btn-success {
+  background: linear-gradient(135deg, #1a7a3c, #22a04f) !important;
+  border: none !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: .8px;
+  border-radius: 50px !important;
+  padding: .55rem 1.2rem !important;
+  box-shadow: 0 4px 16px rgba(34,160,79,.35) !important;
+  transition: all .22s ease;
+  white-space: nowrap;
+  font-size: .88rem;
+}
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(34,160,79,.5) !important;
+}
+
+/* ══════════════════════════════════════
+   TRASH BUTTON
+══════════════════════════════════════ */
+.trash_can_btn {
+  overflow: hidden;
+  background: #363636;
+  border: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+  border-radius: 50px;
+  padding: .5rem 1.1rem;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  letter-spacing: .5px;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  transition: all .22s ease;
+  font-size: .88rem;
+  white-space: nowrap;
+}
+.trash_can_btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(192,57,43,.4);
+}
+
+/* ══════════════════════════════════════
+   SEÇÕES
+══════════════════════════════════════ */
+#secao_pizzas,
+#secao_espetinhos,
+#secao_bebidas { background: transparent; }
+
+#secao_extras  { background: rgba(45,45,45,.5); border-radius: var(--radius); }
+
+/* ══════════════════════════════════════
+   BG-WHITE OVERRIDE (painéis info)
+══════════════════════════════════════ */
+.bg-white,
+.container.bg-white.rounded,
+.bg-white.rounded {
+  background: #323232 !important;
+  border: 1px solid rgba(201,168,76,.18) !important;
+  border-radius: var(--radius) !important;
+  color: var(--white) !important;
+}
+
+/* ══════════════════════════════════════
+   CARDS
+══════════════════════════════════════ */
+.card {
+  background: var(--dark-card);
+  border: 1px solid rgba(201,168,76,.2) !important;
+  border-radius: var(--radius) !important;
+  color: var(--white);
+  transition: transform .22s ease, box-shadow .22s ease;
+  animation: fadeUp .3s ease both;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.5);
+}
+.card-body   { padding: .95rem; }
+.card-title  {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold-light);
+  font-size: .9rem;
+  margin-bottom: .3rem;
+}
+.card-text   { font-size: .78rem; color: rgba(245,240,232,.55); line-height: 1.5; }
+
+.card.shadow-lg {
+  background: linear-gradient(160deg, #333 0%, #292929 100%);
+  border: 1px solid rgba(201,168,76,.25) !important;
+  box-shadow: 0 10px 36px rgba(0,0,0,.5) !important;
+}
+
+.card.border-warning.bg-light {
+  background: rgba(201,168,76,.1) !important;
+  border-color: var(--gold-dark) !important;
+}
+
+/* ══════════════════════════════════════
+   HEADINGS
+══════════════════════════════════════ */
+h4.text-center,
+h3.text-center,
+h3.d-flex {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+h5.text-primary {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold) !important;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+h3.text-primary, h4.text-primary { color: var(--gold) !important; }
+
+h6.text-center {
+  color: rgba(245,240,232,.62);
+  letter-spacing: .8px;
+  font-size: .85rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+/* ══════════════════════════════════════
+   ALERT INFO
+══════════════════════════════════════ */
+.alert-info {
+  background: rgba(201,168,76,.12);
+  border: 1px solid rgba(201,168,76,.38);
+  color: var(--gold-light);
+  border-radius: 10px;
+  font-size: .86rem;
+  padding: .7rem .95rem;
+}
+.alert-info strong { color: var(--gold); }
+.alert-info svg    { opacity: .75; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   TAMANHO SELECIONADO
+══════════════════════════════════════ */
+#selec_size,
+#selec_size_premium {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-weight: 900;
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  text-shadow: 0 0 16px rgba(201,168,76,.4);
+}
+
+#div_max_sabores,
+#div_max_sabores_premium {
+  color: rgba(245,240,232,.5);
+  font-size: .86rem;
+  letter-spacing: .7px;
+}
+
+/* ══════════════════════════════════════
+   TITLE BEBIDAS / EXTRAS / ESPET
+══════════════════════════════════════ */
+#title_bebidas,
+#title_extras {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-weight: 900;
+  font-size: clamp(1.15rem, 4vw, 1.45rem);
+  text-shadow: 0 0 14px rgba(201,168,76,.3);
+  padding: .45rem 0;
+}
+
+#current_sabores_espet {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  text-align: center;
+  padding: .35rem 0;
+}
+
+/* ══════════════════════════════════════
+   BOTÕES TAMANHO
+══════════════════════════════════════ */
+.btn-outline-primary {
+  border: 2px solid var(--gold-dark) !important;
+  color: var(--gold-light) !important;
+  background: transparent !important;
+  font-weight: 700;
+  letter-spacing: .7px;
+  border-radius: 50px !important;
+  padding: .58rem 1.3rem !important;
+  transition: all .2s ease;
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold)) !important;
+  border-color: var(--gold) !important;
+  color: #111 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(201,168,76,.4) !important;
+}
+
+/* ══════════════════════════════════════
+   BOTÕES SABOR
+══════════════════════════════════════ */
+.btn-secondary {
+  background: var(--dark-btn) !important;
+  border: 1px solid rgba(201,168,76,.3) !important;
+  color: rgba(245,240,232,.88) !important;
+  font-size: .82rem;
+  letter-spacing: .3px;
+  border-radius: 50px !important;
+  padding: .4rem .88rem !important;
+  transition: all .18s ease;
+  font-family: 'Lato', sans-serif;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold)) !important;
+  border-color: var(--gold) !important;
+  color: #111 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201,168,76,.35) !important;
+}
+
+/* ══════════════════════════════════════
+   BOTÃO ADICIONAR AO CARRINHO
+   (sobrescreve btn_adicionar.css)
+══════════════════════════════════════ */
+.cssbuttons-io-button {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 55%, var(--gold-light) 100%) !important;
+  color: #111 !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: .68rem 1.5rem !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: .9rem !important;
+  letter-spacing: .7px;
+  cursor: pointer;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .4rem !important;
+  box-shadow: 0 5px 18px rgba(201,168,76,.38) !important;
+  transition: all .22s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.cssbuttons-io-button svg {
+  fill: #111 !important;
+  flex-shrink: 0;
+  margin-right: 0 !important;
+}
+.cssbuttons-io-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(201,168,76,.55) !important;
+  filter: brightness(1.06);
+}
+.cssbuttons-io-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(201,168,76,.3) !important;
+}
+
+/* ══════════════════════════════════════
+   BEBIDAS / EXTRAS — IMAGENS
+══════════════════════════════════════ */
+.img_bebidas {
+  cursor: pointer;
+  background: #323232;
+  border: 2px solid rgba(201,168,76,.28) !important;
+  border-radius: var(--radius) !important;
+  transition: all .2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  -webkit-tap-highlight-color: transparent;
+}
+.img_bebidas:hover,
+.img_bebidas:active {
+  border-color: var(--gold) !important;
+  background: #3C3C3C;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(201,168,76,.22);
+}
+
+/* ══════════════════════════════════════
+   DELIVERY TITLE CARD
+══════════════════════════════════════ */
+.delivery-title-card {
+  background: linear-gradient(90deg, rgba(201,168,76,.16), transparent);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: .65rem 1.2rem;
+  margin-bottom: 1.4rem;
+  display: inline-block;
+}
+.delivery-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 4vw, 1.45rem);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════
+   BADGE
+══════════════════════════════════════ */
+.badge {
+  font-size: .74rem;
+  padding: 4px 11px;
+  border-radius: 20px;
+  letter-spacing: .4px;
+}
+.bg-warning {
+  background: linear-gradient(135deg, #9a710a, var(--gold)) !important;
+  color: #111 !important;
+}
+
+/* ══════════════════════════════════════
+   SEPARADOR DOURADO
+══════════════════════════════════════ */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 2rem 0;
+  border: none;
+  opacity: .55;
+}
+
+/* ══════════════════════════════════════
+   RODAPÉ
+══════════════════════════════════════ */
+footer {
+  background: #161616;
+  border-top: 1px solid rgba(201,168,76,.2);
+  text-align: center;
+  padding: 1.2rem;
+  color: rgba(245,240,232,.28);
+  font-size: .76rem;
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════
+   ANIMAÇÕES
+══════════════════════════════════════ */
+@keyframes piscar {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+.piscar { animation: piscar 1s 2; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════
+   COMBO CARDS
+══════════════════════════════════════ */
+.combo-card {
+  background: var(--dark-card);
+  border: 1px solid rgba(201,168,76,.28);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.combo-card:hover,
+.combo-card:active {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 28px rgba(201,168,76,.25);
+}
+
+.combo-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.combo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .35s ease;
+}
+.combo-card:hover .combo-img {
+  transform: scale(1.04);
+}
+
+.combo-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #111;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: .7rem;
+  letter-spacing: 1.5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+
+.combo-info {
+  padding: .85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.combo-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold-light);
+  font-size: 1rem;
+  margin: 0;
+}
+.combo-desc {
+  font-size: .82rem;
+  color: rgba(245,240,232,.58);
+  line-height: 1.45;
+  margin: 0;
+}
+.combo-price {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  color: var(--gold);
+  font-size: 1.15rem;
+  margin-top: .2rem;
+}
+
+/* ══════════════════════════════════════
+   SMARTPHONE  ≤ 575px
+══════════════════════════════════════ */
+@media (max-width: 575px) {
+
+  /* espaçamentos */
+  .container.my-5  { margin-top: 1.75rem !important; margin-bottom: 1.75rem !important; }
+  .container.my-4  { margin-top: 1.25rem !important; margin-bottom: 1.25rem !important; }
+  .p-4             { padding: .9rem !important; }
+  .p-md-5          { padding: .9rem !important; }
+  .mb-4            { margin-bottom: 1rem !important; }
+  .mt-4            { margin-top: 1rem !important; }
+  .mt-3            { margin-top: .75rem !important; }
+  .mb-3            { margin-bottom: .75rem !important; }
+  .g-3             { --bs-gutter-y: .65rem; --bs-gutter-x: .65rem; }
+
+  /* header */
+  header h1        { font-size: 1.42rem; letter-spacing: 2px; }
+  header p.lead    { font-size: .7rem; letter-spacing: 2px; }
+  header img       { width: 38px !important; }
+
+  /* botões topo — linha única */
+  .d-flex.justify-content-end.mb-3 {
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    gap: .5rem !important;
+  }
+
+  /* botões sabor — 2 por linha */
+  #sabores .row.g-2 > div,
+  #sabores_premium .row.g-2 > div,
+  #sabores_espetinho .row.g-2 > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .btn-secondary { font-size: .78rem !important; padding: .38rem .7rem !important; }
+
+  /* botões tamanho — 3 em linha única se couber */
+  .row.mb-4.justify-content-center.g-3 .col-md-auto {
+    flex: 0 0 auto;
+  }
+  .btn-outline-primary { padding: .5rem 1rem !important; font-size: .82rem; }
+
+  /* botão adicionar — largura total */
+  .cssbuttons-io-button {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: .86rem !important;
+    padding: .65rem .9rem !important;
+  }
+
+  /* bebidas / extras — scroll horizontal */
+  .row.align-items-start.gap-3 {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start !important;
+    gap: .55rem !important;
+    padding-bottom: .4rem;
+    scrollbar-width: none;
+  }
+  .row.align-items-start.gap-3::-webkit-scrollbar { display: none; }
+  .col.p-3.img_bebidas {
+    min-width: 76px !important;
+    max-width: 76px !important;
+    padding: .6rem !important;
+  }
+  .col.p-3.img_bebidas img { max-width: 3.2rem !important; }
+
+  /* cards info — 1 coluna */
+  .row-cols-lg-4 > .col,
+  .row-cols-lg-3 > .col,
+  .row-cols-md-2 > .col { flex: 0 0 100%; max-width: 100%; }
+
+  /* espetinhos — 2 colunas */
+  .row-cols-2 > .col { flex: 0 0 50%; max-width: 50%; }
+
+  .section-label { font-size: 1.35rem; letter-spacing: 2px; }
+  .card-body     { padding: .8rem; }
+  .card-title    { font-size: .85rem; }
+
+  /* combos — ajustes mobile */
+  .combo-info    { padding: .75rem .85rem; }
+  .combo-title   { font-size: .95rem; }
+  .combo-price   { font-size: 1.05rem; }
+}
+
+/* ══════════════════════════════════════
+   TABLET  576px – 768px
+══════════════════════════════════════ */
+@media (min-width: 576px) and (max-width: 768px) {
+  header h1 { font-size: 1.85rem; }
+  .row-cols-lg-4 > .col { flex: 0 0 50%; max-width: 50%; }
+  .row-cols-lg-3 > .col { flex: 0 0 50%; max-width: 50%; }
+  .col.p-3.img_bebidas  { max-width: 90px !important; }
+}
