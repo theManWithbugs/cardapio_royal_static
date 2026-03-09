@@ -15,7 +15,7 @@ function add_extra(item) {
 
   const current_extra = document.createElement("span");
   current_extra.textContent = `${nome_formt}`;
-  current_extra.classList.add("btn", "btn-warning");
+  current_extra.classList.add("btn", "btn-secondary");
   current_extra.style.marginLeft = "7px";
   current_extra.style.marginTop = "5px";
   divCurrentExtras.appendChild(current_extra);
