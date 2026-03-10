@@ -111,6 +111,15 @@
             </div>
           </div>
         </div>
+        <div class="col">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <h6 class="card-title">Portuguesa</h6>
+              <p class="card-text">Molho de tomate, queijo, presunto, tomate, ovo cozido,
+                cebola e azeitona</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -252,8 +261,10 @@
               65</button></div>
         </div>
         <div id="sabores_premium" style="display:none;">
-          <h6 class="text-center mb-3">Selecione os sabores:</h6>
-          <div class="row g-2 justify-content-center">
+          <h6 class="text-center mb-2">Selecione os sabores:</h6>
+
+          <p class="text-center text-muted mb-2" style="font-size:.8rem; font-weight:600; letter-spacing:.05em;">✨ PREMIUM</p>
+          <div class="row g-2 justify-content-center mb-3">
             <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
                 onclick="selec_sabor('Royal suprema')">Royal suprema</button></div>
             <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
@@ -264,6 +275,30 @@
                 onclick="selec_sabor('Basca')">Basca</button></div>
             <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
                 onclick="selec_sabor('Filé com fritas')">Filé com fritas</button></div>
+          </div>
+
+          <p class="text-center text-muted mb-2" style="font-size:.8rem; font-weight:600; letter-spacing:.05em;">🍕 TRADICIONAIS</p>
+          <div class="row g-2 justify-content-center">
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Mussarela')">Mussarela</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Calabresa')">Calabresa</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Frango catupiry')">Frango catupiry</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Portuguesa')">Portuguesa</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Bacon com catupiry')">Bacon c/ Catupiry</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Chocolate')">Chocolate</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Chocolate com morango')">Choc. c/ Morango</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Acreana')">Acreana</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Prestigio')">Prestígio</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
+                onclick="selec_sabor('Banofee')">Banofee</button></div>
           </div>
         </div>
         <div id="current_sabores_premium" class="mt-3 text-center"></div>
@@ -391,30 +426,35 @@
       <h4 class="delivery-title">🥤 Bebidas Disponíveis</h4>
     </div>
     <div class="row align-items-start gap-3 mt-2">
-      <div class="col p-3 img_bebidas" style="max-width:100px;">
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('guarana_lata')">
           <img src="img/guarana_latinha.png" class="img-fluid" style="max-width:4.5rem;" alt="Guaraná lata">
         </a>
+        <small class="d-block mt-1 fw-semibold">R$ 6</small>
       </div>
-      <div class="col p-3 img_bebidas" style="max-width:100px;">
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('coca_lata')">
           <img src="img/coca_cola_latinha.png" class="img-fluid" style="max-width:4.5rem;" alt="Coca-Cola lata">
         </a>
+        <small class="d-block mt-1 fw-semibold">R$ 6</small>
       </div>
-      <div class="col p-3 img_bebidas" style="max-width:100px;">
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('agua_garrafinha')">
           <img src="img/agua_garrafinha.png" class="img-fluid" style="max-width:4.5rem;" alt="Água">
         </a>
+        <small class="d-block mt-1 fw-semibold">R$ 4</small>
       </div>
-      <div class="col p-3 img_bebidas" style="max-width:100px;">
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('coca_2l')">
           <img src="img/coca_cola_2l.png" class="img-fluid" style="max-width:4.5rem;" alt="Coca-Cola 2L">
         </a>
+        <small class="d-block mt-1 fw-semibold">R$ 12</small>
       </div>
-      <div class="col p-3 img_bebidas" style="max-width:100px;">
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('fanta_2l')">
           <img src="img/img_fanta_2l.png" class="img-fluid" style="max-width:4.5rem;" alt="Fanta 2L">
         </a>
+        <small class="d-block mt-1 fw-semibold">R$ 12</small>
       </div>
     </div>
     <div id="title_bebidas" class="text-center pt-1"></div>
@@ -436,15 +476,17 @@
       <h4 class="delivery-title">🍟 Extras</h4>
     </div>
     <div class="row align-items-start gap-3 mt-2">
-      <div class="col p-3 img_bebidas" style="max-width:100px;">
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_extra('fritas_m')">
           <img src="img/img_fritas.png" class="img-fluid" style="max-width:4.5rem;" alt="Fritas">
         </a>
+        <small class="d-block mt-1 fw-semibold">R$ 13</small>
       </div>
-      <div class="col p-3 img_bebidas" style="max-width:100px;">
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_extra('fritas_ame')">
           <img src="img/fritas americanas.png" class="img-fluid" style="max-width:4.5rem;" alt="Fritas americanas">
         </a>
+        <small class="d-block mt-1 fw-semibold">R$ 15</small>
       </div>
     </div>
 

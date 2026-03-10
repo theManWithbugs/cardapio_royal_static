@@ -449,6 +449,17 @@ h6.text-center {
   min-height: 88px;
   -webkit-tap-highlight-color: transparent;
 }
+
+.img_bebidas small {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--gold-light);
+  letter-spacing: .5px;
+  text-shadow: 0 0 8px rgba(201,168,76,.3);
+  margin-top: .35rem;
+}
+
 .img_bebidas:hover,
 .img_bebidas:active {
   border-color: var(--gold) !important;
