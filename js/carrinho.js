@@ -25,11 +25,15 @@ function adicionarCarrinho() {
   divMaxSabores.textContent = "";
   divCurrentSabores.innerHTML = "";
 
-  // limpar premium
   divSaboresPremium.style.display = "none";
   divCurrentSizePremium.textContent = "";
   divMaxSaboresPremium.textContent = "";
   divCurrentSaboresPremium.innerHTML = "";
+
+  divSaboresDoce.style.display = "none";
+  divCurrentSizeDoce.textContent = "";
+  divMaxSaboresDoce.textContent = "";
+  divCurrentSaboresDoce.innerHTML = "";
 
   atualizarCarrinho();
 
@@ -62,17 +66,12 @@ function atualizarCarrinho() {
 
     const p = document.createElement("p");
 
-    if (item.tipo === "Tradicional" || item.tipo === "Premium") {
+    if (item.tipo === "Tradicional" || item.tipo === "Premium" || item.tipo === "Doce") {
       p.textContent =
-        `${item.tipo} | ${item.tamanho} | ` +
+        `${item.tipo} | ${item.tamanho}` +
+        `${item.borda ? ` | Borda: ${item.borda}` : ""} | ` +
         `Sabores: ${item.sabores.join(", ")} | ` +
         `R$ ${item.preco}`;
-    }
-
-    if (item.tipo === "Espetinho") {
-
-      p.textContent =
-        `Espetinho ${item.nome} | Sabor: ${item.sabor.join(", ")} | R$ ${item.preco}`;
     }
 
     if (item.tipo === "Bebida") {
@@ -85,6 +84,11 @@ function atualizarCarrinho() {
     if (item.tipo === "Extra") {
       p.textContent =
         `Extra: ${item.nome} | R$ ${item.preco}`;
+    }
+
+    if (item.tipo === "Combo promocional") {
+      p.textContent =
+        `Promoção: Pizza GG (${item.sabores.join(", ")}) + Pizza doce M (${item.saborDoce}) | R$ ${item.preco}`;
     }
 
     divCarrinho.appendChild(p);
@@ -123,20 +127,12 @@ function enviarWhatsApp() {
     total += item.preco;
 
     // PIZZA
-    if (item.tipo === "Tradicional" || item.tipo === "Premium") {
+    if (item.tipo === "Tradicional" || item.tipo === "Premium" || item.tipo === "Doce") {
 
       mensagem +=
-        `Pizza ${item.tipo} ${item.tamanho}\n` +
+        `Pizza ${item.tipo} ${item.tamanho}` +
+        `${item.borda ? ` | Borda: ${item.borda}` : ""}\n` +
         `Sabores: ${item.sabores.join(", ")}\n` +
-        `Valor: R$ ${item.preco}\n\n`;
-
-    }
-
-    // ESPETINHO
-    if (item.tipo === "Espetinho") {
-
-      mensagem +=
-        `Espetinho ${item.nome}\n` +
         `Valor: R$ ${item.preco}\n\n`;
 
     }
@@ -154,6 +150,12 @@ function enviarWhatsApp() {
     if (item.tipo === "Extra") {
       mensagem +=
         `Extra: ${item.nome} | R$ ${item.preco}\n\n`;
+    }
+
+    if (item.tipo === "Combo promocional") {
+      mensagem +=
+        `Promoção: Pizza GG (${item.sabores.join(", ")}) + Pizza doce M (${item.saborDoce})\n` +
+        `Valor: R$ ${item.preco}\n\n`;
     }
 
   });

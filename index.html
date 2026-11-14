@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#1A1A1A">
+  <meta name="theme-color" content="#a9242b">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/css2.css" rel="stylesheet">
   <link rel="stylesheet" href="css/btn_adicionar.css">
-  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/trash_can_btn.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="icon" href="img/icone_royal.jpeg" type="image/png">
   <title>MENU | ROYAL</title>
 </head>
@@ -18,15 +18,25 @@
 
   <!-- ══ CABEÇALHO ══ -->
   <header class="text-center">
+    <p class="hero-kicker">TRADIÇÃO • SABOR • REALEZA</p>
     <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
-      <img src="img/icone_royal.jpeg" alt="Logo Royal" width="46px"
+      <img src="img/icone_royal.jpeg" alt="Logo Royal" width="56px"
         style="border-radius:50%; border:2px solid #C9A84C; box-shadow:0 0 18px rgba(201,168,76,.45);">
       <h1 class="mb-0">PIZZARIA ROYAL</h1>
-      <img src="img/icone_royal.jpeg" alt="Logo Royal" width="46px"
+      <img src="img/icone_royal.jpeg" alt="Logo Royal" width="56px"
         style="border-radius:50%; border:2px solid #C9A84C; box-shadow:0 0 18px rgba(201,168,76,.45);">
     </div>
-    <p class="lead mb-0">— Escolha o tamanho e os sabores —</p>
+    <p class="lead mb-0">— Tamanhos M, G e GG —</p>
+    <a class="hero-action" href="#secao_pizzas">Monte sua pizza <span aria-hidden="true">↓</span></a>
   </header>
+
+  <nav class="menu-nav" aria-label="Seções do cardápio">
+    <a href="#secao_pizzas">Pizzas</a>
+    <a href="#combo_promocional">Promoção</a>
+    <a href="#secao_bebidas">Bebidas</a>
+    <a href="#secao_extras">Porções</a>
+    <a class="menu-nav-cart" href="#div_carrinho">Meu pedido</a>
+  </nav>
 
   <!-- ══ CARRINHO ══ -->
   <div class="container mt-4">
@@ -136,17 +146,14 @@
                      1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275
                      0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
           </svg>
-          <div><strong>Regras:</strong> M (2 sabores) &nbsp;|&nbsp; G (3 sabores) &nbsp;|&nbsp; GG (4 sabores)</div>
+          <div><strong>Regras:</strong> Escolha o tamanho — até 4 sabores</div>
         </div>
         <div id="selec_size" class="text-center mb-1"></div>
         <div id="div_max_sabores" class="text-center mb-3"></div>
         <div class="row mb-4 justify-content-center g-2">
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_trad('M')">M — R$
-              40</button></div>
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_trad('G')">G — R$
-              50</button></div>
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_trad('GG')">GG — R$
-              60</button></div>
+          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_trad('M')">M — R$ 45</button></div>
+          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_trad('G')">G — R$ 55</button></div>
+          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_trad('GG')">GG — R$ 65</button></div>
         </div>
         <div id="sabores" style="display:none;">
           <h6 class="text-center mb-3">Selecione os sabores:</h6>
@@ -161,17 +168,17 @@
                 onclick="selec_sabor('Portuguesa')">Portuguesa</button></div>
             <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
                 onclick="selec_sabor('Bacon com catupiry')">Bacon c/ Catupiry</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Chocolate')">Chocolate</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Chocolate com morango')">Choc. c/ Morango</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Acreana')">Acreana</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Prestigio')">Prestígio</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Banofee')">Banofee</button></div>
           </div>
+          <h6 class="text-center mt-3 mb-2">Escolha a borda (opcional):</h6>
+          <div class="row g-2 justify-content-center">
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Sem borda', 0)">Sem borda</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Cheddar', 0)">Cheddar grátis</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Catupiry', 15)">Catupiry — R$ 15</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Chocolate', 15)">Chocolate — R$ 15</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Doce de leite', 15)">Doce de leite — R$ 15</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Mista (catupiry, chocolate e doce de leite)', 12)">Mista — R$ 12</button></div>
+          </div>
+          <div id="current_borda_trad" class="text-center mt-2">Sem borda</div>
         </div>
         <div id="current_sabores" class="mt-3 text-center"></div>
         <div class="mt-3 d-flex justify-content-center">
@@ -188,7 +195,6 @@
 
     <hr class="gold-divider">
 
-    <!-- Info Premium -->
     <div class="bg-white rounded p-3 mb-4">
       <h4 class="text-center mb-3">Sabores Premium</h4>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
@@ -196,7 +202,7 @@
           <div class="card h-100 text-center">
             <div class="card-body">
               <h6 class="card-title">Royal Suprema</h6>
-              <p class="card-text">Mussarela, Frango, Bacon, Milho, Catupiry e batata palha</p>
+              <p class="card-text">Mussarela, frango, bacon, milho, catupiry e batata palha</p>
             </div>
           </div>
         </div>
@@ -204,7 +210,7 @@
           <div class="card h-100 text-center">
             <div class="card-body">
               <h6 class="card-title">Três Queijos</h6>
-              <p class="card-text">Mussarela, Cheddar e Requeijão</p>
+              <p class="card-text">Mussarela, cheddar e requeijão</p>
             </div>
           </div>
         </div>
@@ -212,7 +218,7 @@
           <div class="card h-100 text-center">
             <div class="card-body">
               <h6 class="card-title">Carne Seca Royal</h6>
-              <p class="card-text">Mussarela, Bacon, Calabresa, Catupiry e Orégano</p>
+              <p class="card-text">Mussarela, bacon, calabresa, catupiry e orégano</p>
             </div>
           </div>
         </div>
@@ -220,7 +226,7 @@
           <div class="card h-100 text-center">
             <div class="card-body">
               <h6 class="card-title">Basca</h6>
-              <p class="card-text">Mussarela, Bacon, Calabresa, Catupiry e Orégano</p>
+              <p class="card-text">Mussarela, bacon, calabresa, catupiry e orégano</p>
             </div>
           </div>
         </div>
@@ -228,78 +234,67 @@
           <div class="card h-100 text-center">
             <div class="card-body">
               <h6 class="card-title">Filé com Fritas</h6>
-              <p class="card-text">Mussarela, Batata palha e fritas</p>
+              <p class="card-text">Mussarela, batata palha e fritas</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Monte Premium -->
-    <div class="card shadow-lg border-0">
+    <div class="card shadow-lg border-0 mb-4">
       <div class="card-body p-4">
         <h5 class="text-primary text-center mb-3">Monte sua Pizza Premium</h5>
         <div class="alert alert-info d-flex align-items-center" role="alert">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-            class="bi bi-info-circle me-2 flex-shrink-0" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738
-                     3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252
-                     1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275
-                     0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-          </svg>
-          <div><strong>Regras:</strong> M (2 sabores) &nbsp;|&nbsp; G (3 sabores) &nbsp;|&nbsp; GG (4 sabores)</div>
+          <strong class="me-2">Regras:</strong>
+          <span>Escolha o tamanho — até 4 sabores</span>
         </div>
         <div id="selec_size_premium" class="text-center mb-1"></div>
         <div id="div_max_sabores_premium" class="text-center mb-3"></div>
         <div class="row mb-4 justify-content-center g-2">
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_premium('M')">M — R$
-              45</button></div>
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_premium('G')">G — R$
-              55</button></div>
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg" onclick="add_pizz_premium('GG')">GG — R$
-              65</button></div>
+          <div class="col-auto">
+            <button class="btn btn-outline-primary btn-lg" onclick="add_pizz_premium('M')">
+              M — R$ 50
+            </button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-primary btn-lg" onclick="add_pizz_premium('G')">
+              G — R$ 60
+            </button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-primary btn-lg" onclick="add_pizz_premium('GG')">
+              GG — R$ 70
+            </button>
+          </div>
         </div>
         <div id="sabores_premium" style="display:none;">
           <h6 class="text-center mb-2">Selecione os sabores:</h6>
-
-          <p class="text-center text-muted mb-2" style="font-size:.8rem; font-weight:600; letter-spacing:.05em;">✨ PREMIUM</p>
+          <p class="text-center text-muted mb-2">Sabores premium</p>
           <div class="row g-2 justify-content-center mb-3">
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Royal suprema')">Royal suprema</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Três queijos')">Três queijos</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Carne seca royal')">Carne seca royal</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Basca')">Basca</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sabor('Filé com fritas')">Filé com fritas</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Royal suprema')">Royal Suprema</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Três queijos')">Três queijos</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Carne seca royal')">Carne seca royal</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Basca')">Basca</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Filé com fritas')">Filé com fritas</button></div>
           </div>
-
-          <p class="text-center text-muted mb-2" style="font-size:.8rem; font-weight:600; letter-spacing:.05em;">🍕 TRADICIONAIS</p>
+          <p class="text-center text-muted mb-2">Sabores tradicionais</p>
           <div class="row g-2 justify-content-center">
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Mussarela')">Mussarela</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Calabresa')">Calabresa</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Frango catupiry')">Frango catupiry</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Portuguesa')">Portuguesa</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Bacon com catupiry')">Bacon c/ Catupiry</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Chocolate')">Chocolate</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Chocolate com morango')">Choc. c/ Morango</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Acreana')">Acreana</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Prestigio')">Prestígio</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100"
-                onclick="selec_sabor('Banofee')">Banofee</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selec_sabor('Mussarela')">Mussarela</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selec_sabor('Calabresa')">Calabresa</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selec_sabor('Frango catupiry')">Frango catupiry</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selec_sabor('Portuguesa')">Portuguesa</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selec_sabor('Bacon com catupiry')">Bacon c/ Catupiry</button></div>
           </div>
+          <h6 class="text-center mt-3 mb-2">Escolha a borda (opcional):</h6>
+          <div class="row g-2 justify-content-center">
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Sem borda', 0)">Sem borda</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Cheddar', 0)">Cheddar grátis</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Catupiry', 15)">Catupiry — R$ 15</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Chocolate', 15)">Chocolate — R$ 15</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Doce de leite', 15)">Doce de leite — R$ 15</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarBorda('Mista (catupiry, chocolate e doce de leite)', 12)">Mista — R$ 12</button></div>
+          </div>
+          <div id="current_borda_premium" class="text-center mt-2">Sem borda</div>
         </div>
         <div id="current_sabores_premium" class="mt-3 text-center"></div>
         <div class="mt-3 d-flex justify-content-center">
@@ -313,102 +308,40 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ══ ESPETINHOS ══ -->
-  <div class="container my-4 p-4" id="secao_espetinhos">
-    <p class="section-label">🍢 ESPETINHOS</p>
-
-    <div class="bg-white rounded p-3 mb-3">
-      <h4 class="text-center mb-3">Sabores de Espetinho</h4>
-      <div class="row row-cols-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <h6 class="card-title">Carne</h6>
-              <p class="card-text">Espetinho de carne bovina.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <h6 class="card-title">Frango</h6>
-              <p class="card-text">Frango temperado grelhado.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <h6 class="card-title">Toscana</h6>
-              <p class="card-text">Linguiça toscana suculenta.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <h6 class="card-title">Coração</h6>
-              <p class="card-text">Coração de frango temperado.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <h6 class="card-title">Misto</h6>
-              <p class="card-text">Carne + toscana.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <h6 class="card-title">Frango com Bacon</h6>
-              <p class="card-text">Frango enrolado com bacon.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 text-center border-warning bg-light">
-            <div class="card-body">
-              <span class="badge bg-warning mb-2">Acompanhamento</span>
-              <h6 class="card-title">Completo</h6>
-              <p class="card-text">Baião ou arroz branco, vatapá, vinagrete, farofa e mandioca</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card shadow-lg border-0">
+    <div class="card shadow-lg border-0 mb-4">
       <div class="card-body p-4">
-        <h5 class="text-primary text-center mb-3">Adicionar Espetinho</h5>
-        <div class="row mb-4 justify-content-center g-2">
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg"
-              onclick="add_espetinho('Simples')">Simples — R$ 15</button></div>
-          <div class="col-auto"><button class="btn btn-outline-primary btn-lg"
-              onclick="add_espetinho('Completo')">Completo — R$ 25</button></div>
+        <h5 class="text-primary text-center mb-3">Monte sua Pizza Doce</h5>
+        <div class="alert alert-info d-flex align-items-center" role="alert">
+          <strong class="me-2">Regras:</strong>
+          <span>Escolha o tamanho — até 4 sabores</span>
         </div>
-        <div id="sabores_espetinho" style="display:none;">
-          <h6 class="text-center mb-3">Selecione os sabores:</h6>
-          <div class="row g-2 justify-content-center">
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sab_espet('Carne')">Carne</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sab_espet('Toscana')">Toscana</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sab_espet('Coracao')">Coração</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sab_espet('Misto')">Misto</button></div>
-            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100"
-                onclick="selec_sab_espet('Frango com bacon')">Frango com bacon</button></div>
+        <div id="selec_size_doce" class="text-center mb-1"></div>
+        <div id="div_max_sabores_doce" class="text-center mb-3"></div>
+        <div class="row mb-4 justify-content-center g-2">
+          <div class="col-auto">
+            <button class="btn btn-outline-primary btn-lg" onclick="add_pizz_doce('M')">M — R$ 50</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-primary btn-lg" onclick="add_pizz_doce('G')">G — R$ 60</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-primary btn-lg" onclick="add_pizz_doce('GG')">GG — R$ 70</button>
           </div>
         </div>
-        <div id="current_sabores_espet" class="mt-3 text-center"></div>
-        <div class="mt-3 mb-2 d-flex justify-content-center">
-          <button class="cssbuttons-io-button" onclick="adicionarEspetinhoCarrinho()">
+        <div id="sabores_doce" style="display:none;">
+          <h6 class="text-center mb-3">Selecione os sabores doces:</h6>
+          <div class="row g-2 justify-content-center">
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Chocolate')">Chocolate</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Chocolate com morango')">Chocolate com morango</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Acreana')">Acreana</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Prestígio')">Prestígio</button></div>
+            <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selec_sabor('Banofee')">Banofee</button></div>
+          </div>
+        </div>
+        <div id="current_sabores_doce" class="mt-3 text-center"></div>
+        <div class="mt-3 d-flex justify-content-center">
+          <button class="cssbuttons-io-button" onclick="adicionarCarrinho()">
             <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0h24v24H0z" fill="none" />
               <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor" />
@@ -418,9 +351,41 @@
         </div>
       </div>
     </div>
+
+    <div id="combo_promocional" class="promo-combo card shadow-lg border-0">
+      <div class="promo-combo-heading">
+        <span class="promo-combo-tag">Oferta especial</span>
+        <h4>Pizza GG + pizza doce M</h4>
+        <p>Peça uma pizza GG por <strong>R$ 80</strong> e ganhe uma pizza doce M.</p>
+      </div>
+      <div class="card-body p-4">
+        <h6 class="text-center mb-2">Escolha até 4 sabores para a pizza GG</h6>
+        <div class="row g-2 justify-content-center">
+          <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selecionarSaborCombo('Mussarela', this)">Mussarela</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selecionarSaborCombo('Calabresa', this)">Calabresa</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selecionarSaborCombo('Frango catupiry', this)">Frango catupiry</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selecionarSaborCombo('Portuguesa', this)">Portuguesa</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-secondary w-100" onclick="selecionarSaborCombo('Bacon com catupiry', this)">Bacon c/ Catupiry</button></div>
+        </div>
+        <div id="promo_sabores_gg" class="promo-selection mt-2"></div>
+        <h6 class="text-center mt-4 mb-2">Escolha o sabor da pizza doce M grátis</h6>
+        <div class="row g-2 justify-content-center">
+          <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarDoceCombo('Chocolate', this)">Chocolate</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarDoceCombo('Chocolate com morango', this)">Chocolate com morango</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarDoceCombo('Acreana', this)">Acreana</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarDoceCombo('Prestígio', this)">Prestígio</button></div>
+          <div class="col-6 col-md-auto"><button class="btn btn-outline-secondary w-100" onclick="selecionarDoceCombo('Banofee', this)">Banofee</button></div>
+        </div>
+        <div id="promo_sabor_doce" class="promo-selection mt-2"></div>
+        <div class="mt-4 d-flex justify-content-center">
+          <button class="cssbuttons-io-button" onclick="adicionarComboPromo()">
+            <span>Adicionar promoção ao carrinho — R$ 80</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- ══ BEBIDAS ══ -->
   <div class="container my-4 p-4" id="secao_bebidas">
     <div class="delivery-title-card">
       <h4 class="delivery-title">🥤 Bebidas Disponíveis</h4>
@@ -430,31 +395,43 @@
         <a class="d-flex justify-content-center" onclick="add_bebida('guarana_lata')">
           <img src="img/guarana_latinha.png" class="img-fluid" style="max-width:4.5rem;" alt="Guaraná lata">
         </a>
-        <small class="d-block mt-1 fw-semibold">R$ 6</small>
+        <small class="product-name">Guaraná lata</small>
+        <small class="d-block mt-1 fw-semibold">R$ 5</small>
       </div>
       <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('coca_lata')">
           <img src="img/coca_cola_latinha.png" class="img-fluid" style="max-width:4.5rem;" alt="Coca-Cola lata">
         </a>
-        <small class="d-block mt-1 fw-semibold">R$ 6</small>
+        <small class="product-name">Coca-Cola lata</small>
+        <small class="d-block mt-1 fw-semibold">R$ 5</small>
+      </div>
+      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
+        <a class="d-flex justify-content-center" onclick="add_bebida('coca_1l')">
+          <img src="img/coca_cola_2l.png" class="img-fluid" style="max-width:4.5rem;" alt="Coca-Cola 1 litro">
+        </a>
+        <small class="product-name">Coca-Cola 1L</small>
+        <small class="d-block mt-1 fw-semibold">R$ 10</small>
       </div>
       <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('agua_garrafinha')">
           <img src="img/agua_garrafinha.png" class="img-fluid" style="max-width:4.5rem;" alt="Água">
         </a>
+        <small class="product-name">Água</small>
         <small class="d-block mt-1 fw-semibold">R$ 4</small>
       </div>
       <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('coca_2l')">
           <img src="img/coca_cola_2l.png" class="img-fluid" style="max-width:4.5rem;" alt="Coca-Cola 2L">
         </a>
-        <small class="d-block mt-1 fw-semibold">R$ 12</small>
+        <small class="product-name">Coca-Cola 2L</small>
+        <small class="d-block mt-1 fw-semibold">R$ 15</small>
       </div>
       <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
         <a class="d-flex justify-content-center" onclick="add_bebida('fanta_2l')">
           <img src="img/img_fanta_2l.png" class="img-fluid" style="max-width:4.5rem;" alt="Fanta 2L">
         </a>
-        <small class="d-block mt-1 fw-semibold">R$ 12</small>
+        <small class="product-name">Fanta 2L</small>
+        <small class="d-block mt-1 fw-semibold">R$ 15</small>
       </div>
     </div>
     <div id="title_bebidas" class="text-center pt-1"></div>
@@ -480,46 +457,18 @@
         <a class="d-flex justify-content-center" onclick="add_extra('fritas_m')">
           <img src="img/img_fritas.png" class="img-fluid" style="max-width:4.5rem;" alt="Fritas">
         </a>
-        <small class="d-block mt-1 fw-semibold">R$ 13</small>
-      </div>
-      <div class="col p-3 img_bebidas text-center" style="max-width:100px;">
-        <a class="d-flex justify-content-center" onclick="add_extra('fritas_ame')">
-          <img src="img/fritas americanas.png" class="img-fluid" style="max-width:4.5rem;" alt="Fritas americanas">
-        </a>
+        <small class="product-name">Batata frita</small>
         <small class="d-block mt-1 fw-semibold">R$ 15</small>
       </div>
-    </div>
-
-    <!-- ══ COMBOS ══ -->
-    <div class="delivery-title-card mt-4">
-      <h4 class="delivery-title">Combos</h4>
-    </div>
-    <div class="row g-3 mt-2">
-      <div class="col-12 col-sm-6">
-        <div class="combo-card" onclick="add_extra('combo_1')">
-          <div class="combo-img-wrap">
-            <img src="img/img_combo_tres_espt.jpg" class="combo-img" alt="Combo 3 Espetinhos">
-            <span class="combo-badge">COMBO 1</span>
-          </div>
-          <div class="combo-info">
-            <h6 class="combo-title">3 Espetinhos</h6>
-            <p class="combo-desc">3 espetinhos à escolha + farofa + mandioca</p>
-            <span class="combo-price">R$ 40</span>
-          </div>
+      <div class="col p-3 img_bebidas text-center is-unavailable" style="max-width:100px;"
+        aria-disabled="true">
+        <div class="d-flex justify-content-center">
+          <img src="img/fritas americanas.png" class="img-fluid" style="max-width:4.5rem;"
+            alt="Fritas americanas">
         </div>
-      </div>
-      <div class="col-12 col-sm-6">
-        <div class="combo-card" onclick="add_extra('combo_2')">
-          <div class="combo-img-wrap">
-            <img src="img/combo_cinco_espt.jpg" class="combo-img" alt="Combo 5 Espetinhos">
-            <span class="combo-badge">COMBO 2</span>
-          </div>
-          <div class="combo-info">
-            <h6 class="combo-title">5 Espetinhos</h6>
-            <p class="combo-desc">5 espetinhos à escolha + farofa + mandioca</p>
-            <span class="combo-price">R$ 65</span>
-          </div>
-        </div>
+        <small class="product-name">Fritas americanas</small>
+        <small class="d-block mt-1 fw-semibold">R$ 15</small>
+        <small class="availability-label">Indisponível no momento</small>
       </div>
     </div>
 
@@ -544,7 +493,6 @@
   <script src="js/sweetalert2@11.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/pizza.js"></script>
-  <script src="js/espetinho.js"></script>
   <script src="js/bebidas.js"></script>
   <script src="js/extras.js"></script>
   <script src="js/carrinho.js"></script>

@@ -39,11 +39,12 @@ function add_drinks() {
 
     let nome_formt = fomatar_nome(drink);
 
-    if (drink === "guarana_lata") preco = 6;
-    if (drink === "coca_lata") preco = 6;
+    if (drink === "guarana_lata") preco = 5;
+    if (drink === "coca_lata") preco = 5;
+    if (drink === "coca_1l") preco = 10;
     if (drink === "agua_garrafinha") preco = 4;
-    if (drink === "coca_2l") preco = 12;
-    if (drink === "fanta_2l") preco = 12;
+    if (drink === "coca_2l") preco = 15;
+    if (drink === "fanta_2l") preco = 15;
 
     carrinho.push({
       tipo: "Bebida",
