@@ -1029,26 +1029,6 @@ h6.text-center { color: #5e5953; }
   border-color: #d7c9bd !important;
   box-shadow: 0 7px 18px rgba(39,31,25,.1);
 }
-.img_bebidas.is-unavailable {
-  cursor: not-allowed;
-}
-.img_bebidas.is-unavailable:hover,
-.img_bebidas.is-unavailable:active {
-  background: var(--menu-surface);
-  border-color: var(--menu-border) !important;
-  box-shadow: 0 3px 12px rgba(39,31,25,.04);
-  transform: none;
-}
-.img_bebidas.is-unavailable:hover img,
-.img_bebidas.is-unavailable:active img {
-  transform: none;
-}
-.availability-label {
-  color: #a9242b !important;
-  font-size: .65rem !important;
-  line-height: 1.2;
-  text-align: center;
-}
 .badge.bg-warning {
   color: #624911 !important;
   background: #f5e8bd !important;

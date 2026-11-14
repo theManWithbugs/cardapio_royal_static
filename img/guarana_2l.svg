@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 240" role="img">
+  <defs>
+    <linearGradient id="bottle" x1="0" x2="1">
+      <stop stop-color="#075c36"/>
+      <stop offset=".48" stop-color="#20a05b"/>
+      <stop offset="1" stop-color="#06482d"/>
+    </linearGradient>
+    <linearGradient id="drink" x1="0" x2="0" y2="1">
+      <stop stop-color="#79d568"/>
+      <stop offset="1" stop-color="#167b3f"/>
+    </linearGradient>
+  </defs>
+  <rect x="63" y="8" width="34" height="22" rx="4" fill="#c91f25"/>
+  <path d="M59 29h42v21c0 12 9 18 22 28 10 8 16 19 16 34v91a22 22 0 0 1-22 22H43a22 22 0 0 1-22-22v-91c0-15 6-26 16-34 13-10 22-16 22-28z" fill="url(#bottle)" stroke="#d7f5df" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M25 121h110v82a17 17 0 0 1-17 17H42a17 17 0 0 1-17-17z" fill="url(#drink)" opacity=".8"/>
+  <path d="M28 94c18-8 86-8 104 0v58H28z" fill="#f8f6df"/>
+  <circle cx="48" cy="124" r="8" fill="#b51f3b"/>
+  <circle cx="59" cy="126" r="7" fill="#d9474d"/>
+  <path d="M46 115c4-8 10-10 16-9-2 6-7 9-16 9" fill="#2f8e43"/>
+  <text x="98" y="114" text-anchor="middle" fill="#176239" font-family="Arial,sans-serif" font-size="8" font-weight="700">Guaraná</text>
+  <text x="98" y="125" text-anchor="middle" fill="#176239" font-family="Arial,sans-serif" font-size="7">Antarctica</text>
+  <text x="98" y="142" text-anchor="middle" fill="#176239" font-family="Arial,sans-serif" font-size="10" font-weight="700">2 L</text>
+  <path d="M34 68c6-8 12-11 19-15M126 77c-6-8-12-11-19-15" fill="none" stroke="#d8f6df" stroke-width="3" opacity=".65"/>
+</svg>

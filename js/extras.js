@@ -6,15 +6,6 @@ let extras = [];
 
 function add_extra(item) {
 
-  if (item === "fritas_ame") {
-    Swal.fire({
-      icon: "info",
-      title: "Indisponível no momento",
-      text: "Fritas americanas não estão disponíveis no momento."
-    });
-    return;
-  }
-
   extras.push(item);
 
   let nome_formt = fomatar_nome(item);
@@ -48,7 +39,7 @@ function add_extra_carrinho() {
     let nome_formt = fomatar_nome(extra);
 
     if (extra === "fritas_m") preco = 15;
-    if (extra === "fritas_ame") preco = 15;
+    if (extra === "fritas_ame") preco = 20;
 
     carrinho.push({
       tipo: "Extra",

@@ -29,21 +29,21 @@ let botaoSaborDocePromo = null;
 const pizzas = {
 
   Tradicional: {
-    M: { preco: 45, limite: 4 },
-    G: { preco: 55, limite: 4 },
-    GG: { preco: 65, limite: 4 }
+    M: { preco: 45, limite: 3 },
+    G: { preco: 55, limite: 3 },
+    GG: { preco: 65, limite: 3 }
   },
 
   Premium: {
-    M: { preco: 50, limite: 4 },
-    G: { preco: 60, limite: 4 },
-    GG: { preco: 70, limite: 4 }
+    M: { preco: 50, limite: 3 },
+    G: { preco: 60, limite: 3 },
+    GG: { preco: 70, limite: 3 }
   },
 
   Doce: {
-    M: { preco: 50, limite: 4 },
-    G: { preco: 60, limite: 4 },
-    GG: { preco: 70, limite: 4 }
+    M: { preco: 50, limite: 3 },
+    G: { preco: 60, limite: 3 },
+    GG: { preco: 70, limite: 3 }
   }
 
 };
@@ -188,16 +188,16 @@ function selecionarSaborCombo(sabor, botao) {
     saboresPromoGG.splice(index, 1);
     botao.classList.remove("is-selected");
     divPromoSaboresGG.textContent = saboresPromoGG.length
-      ? `Sabores da pizza GG: ${saboresPromoGG.join(", ")} (${saboresPromoGG.length}/4)`
+      ? `Sabores da pizza GG: ${saboresPromoGG.join(", ")} (${saboresPromoGG.length}/3)`
       : "";
     return;
   }
 
-  if (saboresPromoGG.length >= 4) {
+  if (saboresPromoGG.length >= 3) {
     Swal.fire({
       icon: "error",
       title: "Limite atingido",
-      text: "Escolha até 4 sabores para a pizza GG."
+      text: "Escolha até 3 sabores para a pizza GG."
     });
     return;
   }
@@ -205,7 +205,7 @@ function selecionarSaborCombo(sabor, botao) {
   saboresPromoGG.push(sabor);
   botao.classList.add("is-selected");
   divPromoSaboresGG.textContent =
-    `Sabores da pizza GG: ${saboresPromoGG.join(", ")} (${saboresPromoGG.length}/4)`;
+    `Sabores da pizza GG: ${saboresPromoGG.join(", ")} (${saboresPromoGG.length}/3)`;
 }
 
 function selecionarDoceCombo(sabor, botao) {
@@ -260,10 +260,13 @@ function fomatar_nome(string) {
   if (string === "fritas_m") nome_formt = "Porção de fritas M";
   if (string === "fritas_ame") nome_formt = "Porção de fritas americanas";
   if (string === "guarana_lata") nome_formt = "Guaraná Lata";
+  if (string === "guarana_1l") nome_formt = "Guaraná 1L";
+  if (string === "guarana_2l") nome_formt = "Guaraná 2L";
   if (string === "coca_lata") nome_formt = "Coca-cola lata";
   if (string === "coca_1l") nome_formt = "Coca-Cola 1L";
   if (string === "agua_garrafinha") nome_formt = "Água garrafinha";
   if (string === "coca_2l") nome_formt = "Coca cola 2l";
   if (string === "fanta_2l") nome_formt = "Fanta 2l";
+  if (string === "fanta_lata") nome_formt = "Fanta lata";
   return nome_formt;
 }

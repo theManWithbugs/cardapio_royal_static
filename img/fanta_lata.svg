@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 240" role="img">
+  <defs>
+    <linearGradient id="can" x1="0" x2="1">
+      <stop offset="0" stop-color="#df4c00"/>
+      <stop offset=".48" stop-color="#ff9d00"/>
+      <stop offset="1" stop-color="#d94a00"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" x2="0" y2="1">
+      <stop stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#9ca3af"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="80" cy="27" rx="39" ry="9" fill="#b9bec5"/>
+  <path d="M41 27h78l-6 166a15 15 0 0 1-15 14H62a15 15 0 0 1-15-14z" fill="url(#can)"/>
+  <path d="M42 28h76v8H42zM47 196h66v7H47z" fill="url(#metal)"/>
+  <ellipse cx="80" cy="28" rx="38" ry="7" fill="#e5e7eb"/>
+  <ellipse cx="80" cy="28" rx="12" ry="3" fill="#9ca3af"/>
+  <path d="M48 91c18-22 45-28 68-15-7 32-27 53-61 54-7-11-9-24-7-39" fill="#fff3d4" opacity=".94"/>
+  <circle cx="92" cy="111" r="20" fill="#ffb400"/>
+  <path d="M91 91a20 20 0 0 1 0 40 20 20 0 0 0 0-40" fill="#f97316"/>
+  <path d="M92 93v36M74 111h36M79 98l26 26M105 98l-26 26" stroke="#fff4d6" stroke-width="2"/>
+  <path d="M54 65c16-7 35-8 52-2" fill="none" stroke="#ffd27a" stroke-width="3" opacity=".8"/>
+  <circle cx="64" cy="153" r="3" fill="#ffd27a"/>
+  <circle cx="99" cy="165" r="2.5" fill="#ffd27a"/>
+</svg>
